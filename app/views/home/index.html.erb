@@ -1,4 +1,8 @@
 <h3>Welcome to Resume App</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+<% if user_signed_in? %>
+
+<% current_user.resumes.each do |resume| %>
+      <%= link_to resume.name, class: 'btn btn-success' %>
 <% end %>
+<% end %>
+
